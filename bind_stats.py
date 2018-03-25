@@ -21,6 +21,7 @@ FILE = '/tmp/named_stats.txt'
 SEND_FILE = '/tmp/named_sender.txt'
 ZABBIX_SENDER = '/usr/bin/zabbix_sender'
 
+
 def get_stats_file(remote, local):
     ssh = SSHClient()
     ssh.set_missing_host_key_policy(AutoAddPolicy())
@@ -31,6 +32,7 @@ def get_stats_file(remote, local):
 
     sftp.close()
     ssh.close()
+
 
 if __name__ == '__main__':
     get_stats_file(REMOTE_FILE, FILE)
